@@ -3,7 +3,7 @@ import { useState } from "react"
 
 
 function App() {
-  const [selectedPage,setSelectedPage] = useState('hone')
+  const [selectedPage,setSelectedPage] = useState<string>('hone')
   return (
     <div className="app bg-gray-20">
       <Navbar
