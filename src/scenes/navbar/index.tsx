@@ -1,5 +1,9 @@
 import { useState } from 'react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/20/solid'
+import {
+  Bars3BottomLeftIcon,
+  Bars3Icon,
+  XMarkIcon,
+} from '@heroicons/react/20/solid'
 import Logo from '@/assets/Logo.png'
 import Link from './Link'
 import { SelectedPage } from '@/shared/types'
@@ -12,6 +16,7 @@ type Props = {
 
 const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
   const flexBetween = 'flex items-center justfiy-between'
+  const [isMenuToggled, setIsMenuToggle] = useState<boolean>(false)
   const isAboveMediumScreens = useMediaQuery('(min-width:1060px)')
   return (
     <nav>
@@ -51,7 +56,12 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
               </div>
             </div>
           ) : (
-            <div></div>
+            <button
+              className="rounded-full bg-secondary-500 p-2"
+              onClick={() => setIsMenuToggle(!isMenuToggled)}
+            >
+              <Bars3Icon className="h-6 w-6 text-white" />
+            </button>
           )}
         </div>
       </div>
