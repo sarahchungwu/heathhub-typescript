@@ -33,19 +33,21 @@ const Home = ({ setSelectedPage }: Props) => {
             </p>
           </div>
           {/* ACTIONS */}
-          <ActionButton setSelectedPage={setSelectedPage}>
-            Join Now
-          </ActionButton>
-          <AnchorLink
-            className="text-sm font-bold text-primary-500 underline hover:text-secondary-500"
-            onClick={() => setSelectedPage(SelectedPage.ContactUs)}
-            href={`#${SelectedPage.ContactUs}`}
-          >
-            <p>Learn More</p>
-          </AnchorLink>
+          <div className="mt-8 flex items-center gap-8 ">
+            <ActionButton setSelectedPage={setSelectedPage}>
+              Join Now
+            </ActionButton>
+            <AnchorLink
+              className="text-sm font-bold text-primary-500 underline hover:text-secondary-500"
+              onClick={() => setSelectedPage(SelectedPage.ContactUs)}
+              href={`#${SelectedPage.ContactUs}`}
+            >
+              <p>Learn More</p>
+            </AnchorLink>
+          </div>
         </div>
         {/* IMAGE */}
-        <div>
+        <div className="flex basis-3/5 justify-center md:z-10 md:ml-48 md:mt-16 md:justify-items-end">
           <img src={HomePageGraphic} alt="home-pageGraphic" />
         </div>
       </div>
