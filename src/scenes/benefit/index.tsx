@@ -6,6 +6,7 @@ import {
   UserGroupIcon,
 } from '@heroicons/react/20/solid'
 import { motion } from 'framer-motion'
+import Benefit from './Benefit'
 
 type Props = { setSelectedPage: (value: SelectedPage) => void }
 
@@ -47,8 +48,14 @@ const Benefits = ({ setSelectedPage }: Props) => {
 
         {/* BENEFITS */}
         <div className="md:flex items-center justify-between gap-8 ">
-          {benefits.map((benefit) => (
-            <Benefit />
+          {benefits.map((benefit: BenefitType) => (
+            <Benefit
+              key={benefit.title}
+              icon={benefit.icon}
+              title={benefit.title}
+              description={benefit.description}
+              setSelectedPage={setSelectedPage}
+            />
           ))}
         </div>
       </motion.div>
