@@ -15,8 +15,14 @@ const Benefits = ({ setSelectedPage }: Props) => {
       <motion.div
         onViewportEnter={() => setSelectedPage(SelectedPage.Benefits)}
       >
-        <div>
+        {/* HEADER */}
+        <div className="md:my-5 md:w-3/5">
           <HText>MORE THAN JUST GYM</HText>
+          <p className="my-5 text-sm">
+            We provide world class fitness equipment, trainers and classes to
+            get you to your ultimate fitness goals with ease. We provide true
+            careinto each and every member.
+          </p>
         </div>
       </motion.div>
     </section>
