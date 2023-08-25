@@ -6,7 +6,7 @@ import {
   UserGroupIcon,
 } from '@heroicons/react/20/solid'
 import { motion } from 'framer-motion'
-import Benefit from './Benefit'
+import Benefit from './benefit'
 
 type Props = { setSelectedPage: (value: SelectedPage) => void }
 
@@ -31,6 +31,11 @@ const Benefits = ({ setSelectedPage }: Props) => {
         'Fusce vestibulum aliquam ut cras. Nisl lectus egestas sapien nisl. Lacus at mi sit pellentesque. Congue parturient.',
     },
   ]
+  const container = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.3 } },
+  }
+
   return (
     <section id="benefits" className="mx-auto min-h-full w-5/6 py-20">
       <motion.div
@@ -47,7 +52,13 @@ const Benefits = ({ setSelectedPage }: Props) => {
         </div>
 
         {/* BENEFITS */}
-        <div className="md:flex items-center justify-between gap-8 ">
+        <motion.div
+          className="md:flex items-center justify-between gap-8 "
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={container}
+        >
           {benefits.map((benefit: BenefitType) => (
             <Benefit
               key={benefit.title}
@@ -57,7 +68,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
               setSelectedPage={setSelectedPage}
             />
           ))}
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   )
