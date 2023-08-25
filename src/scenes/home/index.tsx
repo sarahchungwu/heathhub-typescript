@@ -7,6 +7,7 @@ import SponsorRedBull from '@/assets/SponsorRedBull.png'
 import SponsorForbes from '@/assets/SponsorForbes.png'
 import SponsorFortune from '@/assets/SponsorFortune.png'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import { motion } from 'framer-motion'
 
 type Props = { setSelectedPage: (value: SelectedPage) => void }
 
@@ -20,20 +21,41 @@ const Home = ({ setSelectedPage }: Props) => {
         {/* MAIN HEADEr */}
         <div className="z-10 mt-32 md:basis-3/5">
           {/* HEADINGS */}
-          <div className="md:mt-20">
+          <motion.div
+            className="md:mt-20"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.8 }}
+            variants={{
+              hidden: { opacity: 0, x: -50 },
+              visible: { opacity: 1, x: 0 },
+            }}
+          >
             <div className="relative">
               <div className="before:absolute before:-top-20 before:z-[-1] before-left-20 md:before:content-evolvetext">
                 <img src={HomePageText} alt="home-page-text" />
               </div>
             </div>
+
             <p className="mt-8 text-sm ">
               Unrivaled Gym. Unparalleled Training Fitness Classes. World Class
               Studios to get the Body Shapes That you Dream of.. Get Your Dream
               Body Now.
             </p>
-          </div>
+          </motion.div>
           {/* ACTIONS */}
-          <div className="mt-8 flex items-center gap-8 ">
+          <motion.div
+            className="mt-8 flex items-center gap-8 "
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            variants={{
+              hidden: { opacity: 0, x: -50 },
+              visible: { opacity: 1, x: 0 },
+            }}
+          >
             <ActionButton setSelectedPage={setSelectedPage}>
               Join Now
             </ActionButton>
@@ -44,7 +66,7 @@ const Home = ({ setSelectedPage }: Props) => {
             >
               <p>Learn More</p>
             </AnchorLink>
-          </div>
+          </motion.div>
         </div>
         {/* IMAGE */}
         <div className="flex basis-3/5 justify-center md:z-10 md:ml-48 md:mt-16 md:justify-items-end">
