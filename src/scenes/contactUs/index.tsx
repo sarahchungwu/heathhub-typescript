@@ -74,7 +74,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
                 placeholder="NAME"
                 {...register('name', { required: true, maxLength: 100 })}
               />
-              {/* Handle Error */}
+
               {errors.name && (
                 <p className="mt-1 text-primary-500">
                   {errors.name.type === 'required' && 'This field is required.'}
@@ -92,12 +92,28 @@ const ContactUs = ({ setSelectedPage }: Props) => {
                   pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                 })}
               />
-              {/* Handle Error */}
+
               {errors.email && (
                 <p className="mt-1 text-primary-500">
                   {errors.email.type === 'required' &&
                     'This field is required.'}
                   {errors.email.type === 'pattern' && 'Invalid email address.'}
+                </p>
+              )}
+
+              <input
+                className={inputStyle}
+                type="text"
+                placeholder="MESSAGE"
+                {...register('message', { required: true, maxLength: 2000 })}
+              />
+
+              {errors.message && (
+                <p className="mt-1 text-primary-500">
+                  {errors.message.type === 'required' &&
+                    'This field is required.'}
+                  {errors.message.type === 'maxLength' &&
+                    'Max length is 2000 char.'}
                 </p>
               )}
             </form>
