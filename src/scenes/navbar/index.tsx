@@ -1,9 +1,5 @@
 import { useState } from 'react'
-import {
-  Bars3BottomLeftIcon,
-  Bars3Icon,
-  XMarkIcon,
-} from '@heroicons/react/20/solid'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/20/solid'
 import Logo from '@/assets/Logo.png'
 import Link from './Link'
 import { SelectedPage } from '@/shared/types'
@@ -40,7 +36,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                     setSelectedPage={setSelectedPage}
                   />
                   <Link
-                    page="Benifits"
+                    page="Benefits"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
@@ -90,7 +86,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
               setSelectedPage={setSelectedPage}
             />
             <Link
-              page="Benifits"
+              page="Benefits"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
