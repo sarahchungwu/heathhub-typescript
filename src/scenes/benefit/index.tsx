@@ -106,8 +106,11 @@ const Benefits = ({ setSelectedPage }: Props) => {
                     visible: { opacity: 1, x: 0 },
                   }}
                 >
-                  <HText> MILLIONS OF HAPPY MEMBERS GETTING{'  '} </HText>
-                  <span className="text-primary-500">FIT</span>
+                  <HText>
+                    {' '}
+                    MILLIONS OF HAPPY MEMBERS GETTING{' '}
+                    <span className="text-primary-500 text-3xl">FIT</span>
+                  </HText>
                 </motion.div>
               </div>
             </div>
