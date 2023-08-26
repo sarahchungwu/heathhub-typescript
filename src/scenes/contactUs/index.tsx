@@ -7,7 +7,7 @@ import HText from '@/shared/HText'
 type Props = { setSelectedPage: (value: SelectedPage) => void }
 
 const ContactUs = ({ setSelectedPage }: Props) => {
-  const inputStyle = `mb-5 w-full rounded-lg bg-primary-300
+  const inputStyle = `mt-5 w-full rounded-lg bg-primary-300
     px-5 py-3 placeholder-white`
 
   const {
@@ -101,9 +101,10 @@ const ContactUs = ({ setSelectedPage }: Props) => {
                 </p>
               )}
 
-              <input
+              <textarea
                 className={inputStyle}
-                type="text"
+                rows={4}
+                cols={50}
                 placeholder="MESSAGE"
                 {...register('message', { required: true, maxLength: 2000 })}
               />
@@ -116,6 +117,12 @@ const ContactUs = ({ setSelectedPage }: Props) => {
                     'Max length is 2000 char.'}
                 </p>
               )}
+              <button
+                type="submit"
+                className="mt-5 rounded-lg bg-secondary-500 px-20 py-3 transition duration-500 hover:text-white"
+              >
+                SUBMIT
+              </button>
             </form>
           </motion.div>
         </div>
