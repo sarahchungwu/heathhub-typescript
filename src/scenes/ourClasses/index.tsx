@@ -53,7 +53,7 @@ const OurClasses = ({ setSelectedPage }: Props) => {
         onViewportEnter={() => setSelectedPage(SelectedPage.OurClasses)}
       >
         <motion.div
-          className="max-auto w-5/6"
+          className="mx-auto w-5/6"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
